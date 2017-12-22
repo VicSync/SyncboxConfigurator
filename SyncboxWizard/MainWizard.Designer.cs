@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWizard));
             this.wizardControl1 = new AeroWizard.WizardControl();
             this.Introduction = new AeroWizard.WizardPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblHangingSetupHeader = new System.Windows.Forms.Label();
+            this.rtbHeader = new System.Windows.Forms.RichTextBox();
+            this.rtbMainLabel = new System.Windows.Forms.RichTextBox();
             this.NetworkPreconfiguration = new AeroWizard.WizardPage();
             this.rdbManualIP = new System.Windows.Forms.RadioButton();
             this.rdbAutoIP = new System.Windows.Forms.RadioButton();
@@ -81,8 +81,8 @@
             // Introduction
             // 
             this.Introduction.AllowBack = false;
-            this.Introduction.Controls.Add(this.label1);
-            this.Introduction.Controls.Add(this.lblHangingSetupHeader);
+            this.Introduction.Controls.Add(this.rtbHeader);
+            this.Introduction.Controls.Add(this.rtbMainLabel);
             this.Introduction.Name = "Introduction";
             this.Introduction.NextPage = this.NetworkPreconfiguration;
             this.Introduction.Size = new System.Drawing.Size(630, 357);
@@ -90,23 +90,28 @@
             this.Introduction.Text = "Introduction";
             this.Introduction.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.Introduction_Initialize);
             // 
-            // label1
+            // rtbHeader
             // 
-            this.label1.Location = new System.Drawing.Point(44, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(522, 82);
-            this.label1.TabIndex = 3;
-            this.label1.Text = resources.GetString("label1.Text");
+            this.rtbHeader.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbHeader.Location = new System.Drawing.Point(4, 4);
+            this.rtbHeader.Multiline = false;
+            this.rtbHeader.Name = "rtbHeader";
+            this.rtbHeader.Size = new System.Drawing.Size(623, 29);
+            this.rtbHeader.TabIndex = 5;
+            this.rtbHeader.Text = "This wizard will help you configure the SyncboxTM. The following items are needed" +
+    " to complete the configuration:";
             // 
-            // lblHangingSetupHeader
+            // rtbMainLabel
             // 
-            this.lblHangingSetupHeader.AutoSize = true;
-            this.lblHangingSetupHeader.Location = new System.Drawing.Point(4, 4);
-            this.lblHangingSetupHeader.Name = "lblHangingSetupHeader";
-            this.lblHangingSetupHeader.Size = new System.Drawing.Size(594, 15);
-            this.lblHangingSetupHeader.TabIndex = 2;
-            this.lblHangingSetupHeader.Text = "This wizard will help you configure the Syncbox. The following items are needed t" +
-    "o complete the configuration:";
+            this.rtbMainLabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rtbMainLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbMainLabel.BulletIndent = 3;
+            this.rtbMainLabel.Location = new System.Drawing.Point(35, 39);
+            this.rtbMainLabel.Name = "rtbMainLabel";
+            this.rtbMainLabel.ReadOnly = true;
+            this.rtbMainLabel.Size = new System.Drawing.Size(526, 96);
+            this.rtbMainLabel.TabIndex = 4;
+            this.rtbMainLabel.Text = resources.GetString("rtbMainLabel.Text");
             // 
             // NetworkPreconfiguration
             // 
@@ -367,7 +372,6 @@
             this.Name = "MainWizard";
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).EndInit();
             this.Introduction.ResumeLayout(false);
-            this.Introduction.PerformLayout();
             this.NetworkPreconfiguration.ResumeLayout(false);
             this.NetworkPreconfiguration.PerformLayout();
             this.NetworkDetails.ResumeLayout(false);
@@ -395,7 +399,6 @@
         private System.Windows.Forms.Label lblSubnetMask;
         private System.Windows.Forms.Label lblIpAddress;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label lblHangingSetupHeader;
         private System.Windows.Forms.Label lblHangingCompleteHeader;
         private System.Windows.Forms.Label lblCompleteParagraph;
         private IPAddressControlLib.IPAddressControl txtSubnetMask;
@@ -403,7 +406,8 @@
         private IPAddressControlLib.IPAddressControl txtPreferredDns;
         private IPAddressControlLib.IPAddressControl txtAlternateDns;
         private IPAddressControlLib.IPAddressControl txtIpAddress;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox rtbMainLabel;
+        private System.Windows.Forms.RichTextBox rtbHeader;
     }
 }

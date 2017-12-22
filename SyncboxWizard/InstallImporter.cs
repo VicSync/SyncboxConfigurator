@@ -24,24 +24,81 @@ namespace SyncboxWizard
             string callsignText, dhcpText, ipText, subnetText, gatewayText, preferredDnsText, alternateDnsText;
             callsignText = dhcpText = ipText = subnetText = gatewayText = preferredDnsText = alternateDnsText = "";
 
-            XmlNodeList callsign = doc.GetElementsByTagName("callsign");
-            XmlNodeList dhcp = doc.GetElementsByTagName("useDHCP");
-            callsignText = callsign[0].InnerText;
-            dhcpText = dhcp[0].InnerText;
+            XmlNodeList callsign;
+            XmlNodeList dhcp;
+            XmlNodeList ip;
+            XmlNodeList subnet;
+            XmlNodeList gateway;
+            XmlNodeList preferredDns;
+            XmlNodeList altDns;
 
-            if (dhcp[0].InnerText.Equals("false"))
+            try // Check to make sure the callsign element is present, else assign empty string
             {
-                XmlNodeList ip = doc.GetElementsByTagName("ip");
-                XmlNodeList subnet = doc.GetElementsByTagName("subnet");
-                XmlNodeList gateway = doc.GetElementsByTagName("gateway");
-                XmlNodeList preferredDns = doc.GetElementsByTagName("dns1");
-                XmlNodeList altDns = doc.GetElementsByTagName("dns2");
-                ipText = ip[0].InnerText;
-                subnetText = subnet[0].InnerText;
-                gatewayText = gateway[0].InnerText;
-                preferredDnsText = preferredDns[0].InnerText;
-                alternateDnsText = altDns[0].InnerText;
+                callsign = doc.GetElementsByTagName("callsign");
+                callsignText = callsign[0].InnerText;
+            }
+            catch (NullReferenceException)
+            {
+                callsignText = "";
+            }
+            try // Check to make sure the dhcp element is present, else assign empty string
+            {
+                dhcp = doc.GetElementsByTagName("useDHCP");
+                dhcpText = dhcp[0].InnerText;
+            }
+            catch (NullReferenceException)
+            {
+                dhcpText = "";
+            }
 
+            if (dhcpText.Equals("false") || dhcpText.Equals("")) // if dhcp is set to manual gather all other fields
+            {
+                try // Check to make sure the ip element is present, else assign empty string
+                {
+                    ip = doc.GetElementsByTagName("ip");
+                    ipText = ip[0].InnerText;
+                }
+                catch(NullReferenceException)
+                {
+                    ipText = "";
+                }
+                try // Check to make sure the subnet element is present, else assign empty string
+                {
+                    subnet = doc.GetElementsByTagName("subnet");
+                    subnetText = subnet[0].InnerText;
+                }
+                catch (NullReferenceException)
+                {
+                    subnetText = "";
+                }
+                try // Check to make sure the gateway element is present, else assign empty string
+                {
+                    gateway = doc.GetElementsByTagName("gateway");
+                    gatewayText = gateway[0].InnerText;
+                }
+                catch (NullReferenceException)
+                {
+                    gatewayText = "";
+                }
+                try // Check to make sure the preferredDns element is present, else assign empty string
+                {
+                    preferredDns = doc.GetElementsByTagName("dns1");
+                    preferredDnsText = preferredDns[0].InnerText;
+                }
+                catch (NullReferenceException)
+                {
+                    preferredDnsText = "";
+                }
+                try // Check to make sure the alternateDns element is present, else assign empty string
+                {
+                    altDns = doc.GetElementsByTagName("dns2");
+                    alternateDnsText = altDns[0].InnerText;
+                }
+                catch (NullReferenceException)
+                {
+                    alternateDnsText = "";
+                }
+                
             }
             FullInstallSettings settings = new FullInstallSettings(callsignText, dhcpText, ipText, subnetText, gatewayText, preferredDnsText, alternateDnsText);
 
@@ -114,4 +171,4 @@ namespace SyncboxWizard
         }
 
     }
-}
+} 

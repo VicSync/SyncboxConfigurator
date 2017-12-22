@@ -102,14 +102,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SyncboxWizard.exe" size="29608">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SyncboxWizard.exe" size="31144">
       <assemblyIdentity name="SyncboxWizard" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>O00KmUj0kIoBLoQD5xi5XAlgWfDFOrz/tJGvGb/Og6k=</dsig:DigestValue>
+        <dsig:DigestValue>6pS9+OFDk7aD63BFsIOqvA77JJirgaiXv3Dg9phAkOg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

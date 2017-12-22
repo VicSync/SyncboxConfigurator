@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -44,6 +45,7 @@ namespace SyncboxWizard
             txtPreferredDns.Text = baseSettings.PreferredDns;
             txtAlternateDns.Text = baseSettings.AlternateDns;
             rdbManualIP.Checked = (baseSettings.Dhcp.Equals("false")) ? true : false;
+            
 
         }
 
@@ -68,6 +70,34 @@ namespace SyncboxWizard
             volumeLabel = currentDrive.VolumeLabel;
             
             Introduction.AllowNext = (volumeLabel.Equals("SYNCBAK")) ? true : false;
+
+
+            /** Make the line in main text box bold **/
+            int index = rtbMainLabel.Text.IndexOf("it is required in order to continue!!!");
+            int length = "it is required in order to continue!!!".Length;
+            rtbMainLabel.Select(index, length);
+            Font currentFont = rtbMainLabel.SelectionFont;
+            rtbMainLabel.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, FontStyle.Bold);
+            rtbMainLabel.SelectAll();
+            rtbMainLabel.SelectionBullet = true;
+            rtbMainLabel.Select(0, 0);
+
+            /** Make "syncbox" italicized**/
+            int index2 = rtbHeader.Text.IndexOf("Syncbox");
+            int length2 = "Syncbox".Length;
+            rtbHeader.Select(index2, length2);
+            Font currentFont2 = rtbHeader.SelectionFont;
+            rtbHeader.SelectionFont = new Font(currentFont2.FontFamily, currentFont2.Size, FontStyle.Italic);
+            rtbHeader.Select(0,0);
+
+            /** Superscript TM in header**/
+            int index3 = rtbHeader.Text.IndexOf("TM");
+            int length3 = "TM".Length;
+            rtbHeader.Select(index3, length3);
+            rtbHeader.SelectionCharOffset = 5;
+            var tmFont = rtbHeader.SelectionFont;
+            rtbHeader.SelectionFont = new Font(tmFont.FontFamily, 4);
+            rtbHeader.Select(0, 0); 
 
         }
 
@@ -129,7 +159,7 @@ namespace SyncboxWizard
 
         }
 
-        /** Event Methods **/
+        /** Event Methods **/ 
 
         private void textChanged(object sender, KeyEventArgs e)
         {

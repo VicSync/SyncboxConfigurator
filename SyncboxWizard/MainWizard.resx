@@ -117,9 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Syncbak-provided USB thumb drive plugged into a PC running Microsoft Windows (XP or newer); it is required in order to continue!!!
-Network connection information for the Syncbox; you may need to contact your IT department for this information</value>
+  <data name="rtbMainLabel.Text" xml:space="preserve">
+    <value> Syncbak-provided USB thumb drive plugged into a PC running Microsoft Windows (7 or newer); it is required in order to continue!!!
+ Network connection information for the Syncbox; you may need to contact your IT department for this information</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="wizardControl1.TitleIcon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
