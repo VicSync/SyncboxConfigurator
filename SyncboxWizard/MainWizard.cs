@@ -97,7 +97,7 @@ namespace SyncboxWizard
 
         private void NetworkDetails_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
-            NetworkDetails.AllowNext = verifyIPSettings() == true ? true : false;
+            NetworkDetails.AllowNext = VerifyIPSettings() == true ? true : false;
         }
 
         private void NetworkPreconfiguration_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
@@ -157,7 +157,7 @@ namespace SyncboxWizard
 
         private void textChanged(object sender, KeyEventArgs e)
         {
-            NetworkDetails.AllowNext = verifyIPSettings() ? true : false;
+            NetworkDetails.AllowNext = VerifyIPSettings() ? true : false;
         }
 
         private void txtCallsign_TextChanged(object sender, EventArgs e)
@@ -174,7 +174,17 @@ namespace SyncboxWizard
             }
             else
             {
-                txtCallsign.Text = txtCallsign.Text.Remove(0, txtCallsign.Text.Length);
+                //txtCallsign.Text = txtCallsign.Text.Remove(0, txtCallsign.Text.Length);
+                
+                foreach (char l in txtCallsign.Text)
+                {
+                    if (!Char.IsLetter(l))
+                    {
+                        var position = txtCallsign.Text.IndexOf(l);
+                        txtCallsign.Text = txtCallsign.Text.Remove(position,1);
+                        txtCallsign.SelectionStart = (txtCallsign.Text.Length == 0) ? 0 : txtCallsign.Text.Length;
+                    }
+                }
             }
 
             NetworkPreconfiguration.AllowNext = (txtCallsign.Text.Length < 3) ? false : true;
@@ -182,7 +192,7 @@ namespace SyncboxWizard
 
 
         /** Private helper methods **/
-        private bool verifyIPSettings()
+        private bool VerifyIPSettings()
         {
             bool result = false;
             bool ipValid = false, subnetValid = false, gatewayValid = false, preferredValid = false, alternateValid = true;
