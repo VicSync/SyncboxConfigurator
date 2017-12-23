@@ -97,4 +97,3 @@ C:\Users\dan\Desktop\syncboxconfigurator\SyncboxWizard\obj\Debug\SyncboxWizard.e
 C:\Users\dan\Desktop\syncboxconfigurator\SyncboxWizard\obj\Debug\SyncboxWizard.application
 C:\Users\dan\Desktop\syncboxconfigurator\SyncboxWizard\obj\Debug\SyncboxWizard.exe
 C:\Users\dan\Desktop\syncboxconfigurator\SyncboxWizard\obj\Debug\SyncboxWizard.pdb
-C:\Users\dan\Desktop\syncboxconfigurator\SyncboxWizard\obj\Debug\SyncboxWizard.csprojResolveAssemblyReference.cache

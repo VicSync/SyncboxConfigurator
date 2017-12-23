@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SyncboxWizard
@@ -24,6 +25,7 @@ namespace SyncboxWizard
         {
             InitializeComponent();
 
+            
             // Load existing xml settings if present
             try
             {
@@ -60,17 +62,9 @@ namespace SyncboxWizard
 
         private void Introduction_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
-            /* To ensure the wizard is running off a Syncbak labeled drive */
-            string volumeLabel = "";
-            string currentPath = System.Reflection.Assembly.GetExecutingAssembly().Location.ElementAt(0).ToString() + ":\\";
-            
-            DriveInfo[] allDrives = DriveInfo.GetDrives();
-            DriveInfo currentDrive = allDrives.Single(x => x.Name.Equals(currentPath));
-
-            volumeLabel = currentDrive.VolumeLabel;
-            
-            Introduction.AllowNext = (volumeLabel.Equals("SYNCBAK")) ? true : false;
-
+            Thread t = new Thread(new ThreadStart(DriveInsertionCheck));
+            t.IsBackground = true;
+            t.Start();
 
             /** Make the line in main text box bold **/
             int index = rtbMainLabel.Text.IndexOf("it is required in order to continue!!!");
@@ -206,6 +200,40 @@ namespace SyncboxWizard
             return result;
         }
 
-        
+        private void DriveInsertionCheck()
+        {
+            
+            while (true)
+            {
+                try
+                {
+                    /* To ensure the wizard is running off a Syncbak labeled drive */
+                    string volumeLabel = "";
+                    string currentPath = System.Reflection.Assembly.GetExecutingAssembly().Location.ElementAt(0).ToString() + ":\\";
+
+                    DriveInfo[] allDrives = DriveInfo.GetDrives();
+                    DriveInfo currentDrive = allDrives.Single(x => x.Name.Equals(currentPath));
+
+                    if (currentDrive.IsReady)
+                    {
+                        volumeLabel = currentDrive.VolumeLabel;
+                        wizardControl1.SelectedPage.AllowNext = (volumeLabel.Equals("SYNCBAK")) ? true : false;
+                    }
+                    else
+                    {
+                        wizardControl1.SelectedPage.AllowNext = false;
+                    }
+                                        
+                }
+                catch(Exception ex)
+                {
+                    wizardControl1.SelectedPage.AllowNext = false;
+                }
+                
+            }
+            
+        }
+
+
     }
 }
