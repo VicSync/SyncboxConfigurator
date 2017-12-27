@@ -57,7 +57,7 @@ namespace SyncboxWizard
 
         private void NetworkPreconfiguration_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
-            NetworkPreconfiguration.AllowNext = (txtCallsign.Text.Length < 3) ? false : true;                        
+            NetworkPreconfiguration.AllowNext = (txtCallsign.Text.Length < 3) ? false : true;
         }
 
         private void Introduction_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
@@ -164,17 +164,15 @@ namespace SyncboxWizard
         {
             // Call sign letters entered by the user
             String callSignUserInput = "";
-
+            
             // If user attempts to enter numeric values, those keystrokes are ignored
             // If user attempts to paste a string containing numeric values, nothing will be pasted. Strings consisting of alphabetical characters only will be pasted
             if (txtCallsign.Text.All(character => char.IsLetter(character)))
             {
                 callSignUserInput = txtCallsign.Text;
-                txtCallsign.Text = callSignUserInput;
             }
             else
             {
-                //txtCallsign.Text = txtCallsign.Text.Remove(0, txtCallsign.Text.Length);
                 
                 foreach (char l in txtCallsign.Text)
                 {
@@ -226,8 +224,7 @@ namespace SyncboxWizard
 
                     if (currentDrive.IsReady)
                     {
-                        volumeLabel = currentDrive.VolumeLabel;
-                        wizardControl1.SelectedPage.AllowNext = (volumeLabel.Equals("SYNCBAK")) ? true : false;
+
                     }
                     else
                     {
