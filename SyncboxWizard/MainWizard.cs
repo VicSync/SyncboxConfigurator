@@ -21,6 +21,12 @@ namespace SyncboxWizard
         /// </summary>
         private FullInstallSettings finalSettings = null;
 
+        /// <summary>
+        /// Boolean validator to check the state of the callsign textbox
+        /// </summary>
+        private bool callsignvalid = false;
+        
+
         public MainWizard()
         {
             InitializeComponent();
@@ -57,7 +63,7 @@ namespace SyncboxWizard
 
         private void NetworkPreconfiguration_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
-            NetworkPreconfiguration.AllowNext = (txtCallsign.Text.Length < 3) ? false : true;
+            callsignvalid = (txtCallsign.Text.Length >= 3) ? true : false;
         }
 
         private void Introduction_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
@@ -94,12 +100,7 @@ namespace SyncboxWizard
             rtbHeader.Select(0, 0); 
 
         }
-
-        private void NetworkDetails_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
-        {
-            NetworkDetails.AllowNext = VerifyIPSettings() == true ? true : false;
-        }
-
+        
         private void NetworkPreconfiguration_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
             NetworkPreconfiguration.NextPage = (rdbAutoIP.Checked) ? Conclusion : NetworkDetails;
@@ -154,12 +155,7 @@ namespace SyncboxWizard
         }
 
         /** Event Methods **/ 
-
-        private void textChanged(object sender, KeyEventArgs e)
-        {
-            NetworkDetails.AllowNext = VerifyIPSettings() ? true : false;
-        }
-
+        
         private void txtCallsign_TextChanged(object sender, EventArgs e)
         {
             // Call sign letters entered by the user
@@ -185,7 +181,7 @@ namespace SyncboxWizard
                 }
             }
 
-            NetworkPreconfiguration.AllowNext = (txtCallsign.Text.Length < 3) ? false : true;
+            callsignvalid = (txtCallsign.Text.Length >= 3) ? true : false;
         }
 
 
@@ -224,6 +220,22 @@ namespace SyncboxWizard
 
                     if (currentDrive.IsReady)
                     {
+                        volumeLabel = currentDrive.VolumeLabel;
+
+                        switch (wizardControl1.SelectedPage.Name) {
+                            case "Introduction": 
+                                Introduction.AllowNext = (volumeLabel.Equals("SYNCBAK")) ? true : false;
+                                break;
+                            case "Conclusion": 
+                                Conclusion.AllowNext = (volumeLabel.Equals("SYNCBAK")) ? true : false;
+                                break;
+                            case "NetworkPreconfiguration":   
+                                NetworkPreconfiguration.AllowNext = (volumeLabel.Equals("SYNCBAK")) && callsignvalid ? true : false;
+                                break;
+                            case "NetworkDetails": 
+                                NetworkDetails.AllowNext = (volumeLabel.Equals("SYNCBAK")) && VerifyIPSettings() ? true : false;
+                                break;  
+                        }
 
                     }
                     else

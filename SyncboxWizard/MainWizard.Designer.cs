@@ -187,8 +187,7 @@
             this.NetworkDetails.NextPage = this.Conclusion;
             this.NetworkDetails.Size = new System.Drawing.Size(630, 357);
             this.NetworkDetails.TabIndex = 2;
-            this.NetworkDetails.Text = "Fill In Your Network Details";
-            this.NetworkDetails.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.NetworkDetails_Initialize);
+            this.NetworkDetails.Text = "Fill out your Network Details";
             // 
             // txtSubnetMask
             // 
@@ -204,7 +203,6 @@
             this.txtSubnetMask.Size = new System.Drawing.Size(429, 23);
             this.txtSubnetMask.TabIndex = 12;
             this.txtSubnetMask.Text = "...";
-            this.txtSubnetMask.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textChanged);
             // 
             // txtDefaultGateway
             // 
@@ -220,7 +218,6 @@
             this.txtDefaultGateway.Size = new System.Drawing.Size(429, 23);
             this.txtDefaultGateway.TabIndex = 13;
             this.txtDefaultGateway.Text = "...";
-            this.txtDefaultGateway.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textChanged);
             // 
             // txtPreferredDns
             // 
@@ -236,7 +233,6 @@
             this.txtPreferredDns.Size = new System.Drawing.Size(429, 23);
             this.txtPreferredDns.TabIndex = 14;
             this.txtPreferredDns.Text = "...";
-            this.txtPreferredDns.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textChanged);
             // 
             // txtAlternateDns
             // 
@@ -252,7 +248,6 @@
             this.txtAlternateDns.Size = new System.Drawing.Size(429, 23);
             this.txtAlternateDns.TabIndex = 15;
             this.txtAlternateDns.Text = "...";
-            this.txtAlternateDns.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textChanged);
             // 
             // txtIpAddress
             // 
@@ -268,7 +263,6 @@
             this.txtIpAddress.Size = new System.Drawing.Size(429, 23);
             this.txtIpAddress.TabIndex = 11;
             this.txtIpAddress.Text = "...";
-            this.txtIpAddress.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textChanged);
             // 
             // textBox6
             // 
