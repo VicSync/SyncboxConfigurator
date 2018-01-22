@@ -66,6 +66,9 @@
     <Reference Include="IPAddressControlLib">
       <HintPath>..\..\VS10-TestIPAddressControl-Rev55\TestControl\IPAddressControlLib.dll</HintPath>
     </Reference>
+    <Reference Include="iptb">
+      <HintPath>..\..\IPTextBox_src\iptb\bin\Debug\iptb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -39,11 +39,41 @@
             this.txtCallsign = new System.Windows.Forms.TextBox();
             this.lblCallsign = new System.Windows.Forms.Label();
             this.NetworkDetails = new AeroWizard.WizardPage();
-            this.txtSubnetMask = new IPAddressControlLib.IPAddressControl();
-            this.txtDefaultGateway = new IPAddressControlLib.IPAddressControl();
-            this.txtPreferredDns = new IPAddressControlLib.IPAddressControl();
-            this.txtAlternateDns = new IPAddressControlLib.IPAddressControl();
-            this.txtIpAddress = new IPAddressControlLib.IPAddressControl();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.altDnsMi4 = new System.Windows.Forms.MaskedTextBox();
+            this.altDnsMi3 = new System.Windows.Forms.MaskedTextBox();
+            this.altDnsMi2 = new System.Windows.Forms.MaskedTextBox();
+            this.altDnsMi1 = new System.Windows.Forms.MaskedTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.prefDnsMi4 = new System.Windows.Forms.MaskedTextBox();
+            this.prefDnsMi3 = new System.Windows.Forms.MaskedTextBox();
+            this.prefDnsMi2 = new System.Windows.Forms.MaskedTextBox();
+            this.prefDnsMi1 = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.gatewayMi4 = new System.Windows.Forms.MaskedTextBox();
+            this.gatewayMi3 = new System.Windows.Forms.MaskedTextBox();
+            this.gatewayMi2 = new System.Windows.Forms.MaskedTextBox();
+            this.gatewayMi1 = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.subnetMi4 = new System.Windows.Forms.MaskedTextBox();
+            this.subnetMi3 = new System.Windows.Forms.MaskedTextBox();
+            this.subnetMi2 = new System.Windows.Forms.MaskedTextBox();
+            this.subnetMi1 = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ipMi4 = new System.Windows.Forms.MaskedTextBox();
+            this.ipMi3 = new System.Windows.Forms.MaskedTextBox();
+            this.ipMi2 = new System.Windows.Forms.MaskedTextBox();
+            this.ipMi1 = new System.Windows.Forms.MaskedTextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.lblAlternateDns = new System.Windows.Forms.Label();
             this.lblPreferredDns = new System.Windows.Forms.Label();
@@ -172,11 +202,41 @@
             // 
             // NetworkDetails
             // 
-            this.NetworkDetails.Controls.Add(this.txtSubnetMask);
-            this.NetworkDetails.Controls.Add(this.txtDefaultGateway);
-            this.NetworkDetails.Controls.Add(this.txtPreferredDns);
-            this.NetworkDetails.Controls.Add(this.txtAlternateDns);
-            this.NetworkDetails.Controls.Add(this.txtIpAddress);
+            this.NetworkDetails.Controls.Add(this.label14);
+            this.NetworkDetails.Controls.Add(this.label15);
+            this.NetworkDetails.Controls.Add(this.label16);
+            this.NetworkDetails.Controls.Add(this.altDnsMi4);
+            this.NetworkDetails.Controls.Add(this.altDnsMi3);
+            this.NetworkDetails.Controls.Add(this.altDnsMi2);
+            this.NetworkDetails.Controls.Add(this.altDnsMi1);
+            this.NetworkDetails.Controls.Add(this.label11);
+            this.NetworkDetails.Controls.Add(this.label12);
+            this.NetworkDetails.Controls.Add(this.label13);
+            this.NetworkDetails.Controls.Add(this.prefDnsMi4);
+            this.NetworkDetails.Controls.Add(this.prefDnsMi3);
+            this.NetworkDetails.Controls.Add(this.prefDnsMi2);
+            this.NetworkDetails.Controls.Add(this.prefDnsMi1);
+            this.NetworkDetails.Controls.Add(this.label8);
+            this.NetworkDetails.Controls.Add(this.label9);
+            this.NetworkDetails.Controls.Add(this.label10);
+            this.NetworkDetails.Controls.Add(this.gatewayMi4);
+            this.NetworkDetails.Controls.Add(this.gatewayMi3);
+            this.NetworkDetails.Controls.Add(this.gatewayMi2);
+            this.NetworkDetails.Controls.Add(this.gatewayMi1);
+            this.NetworkDetails.Controls.Add(this.label5);
+            this.NetworkDetails.Controls.Add(this.label6);
+            this.NetworkDetails.Controls.Add(this.label7);
+            this.NetworkDetails.Controls.Add(this.subnetMi4);
+            this.NetworkDetails.Controls.Add(this.subnetMi3);
+            this.NetworkDetails.Controls.Add(this.subnetMi2);
+            this.NetworkDetails.Controls.Add(this.subnetMi1);
+            this.NetworkDetails.Controls.Add(this.label4);
+            this.NetworkDetails.Controls.Add(this.label3);
+            this.NetworkDetails.Controls.Add(this.label1);
+            this.NetworkDetails.Controls.Add(this.ipMi4);
+            this.NetworkDetails.Controls.Add(this.ipMi3);
+            this.NetworkDetails.Controls.Add(this.ipMi2);
+            this.NetworkDetails.Controls.Add(this.ipMi1);
             this.NetworkDetails.Controls.Add(this.textBox6);
             this.NetworkDetails.Controls.Add(this.lblAlternateDns);
             this.NetworkDetails.Controls.Add(this.lblPreferredDns);
@@ -189,80 +249,425 @@
             this.NetworkDetails.TabIndex = 2;
             this.NetworkDetails.Text = "Fill out your Network Details";
             // 
-            // txtSubnetMask
+            // label14
             // 
-            this.txtSubnetMask.AllowInternalTab = true;
-            this.txtSubnetMask.AutoHeight = true;
-            this.txtSubnetMask.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSubnetMask.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txtSubnetMask.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSubnetMask.Location = new System.Drawing.Point(198, 56);
-            this.txtSubnetMask.MinimumSize = new System.Drawing.Size(84, 23);
-            this.txtSubnetMask.Name = "txtSubnetMask";
-            this.txtSubnetMask.ReadOnly = false;
-            this.txtSubnetMask.Size = new System.Drawing.Size(429, 23);
-            this.txtSubnetMask.TabIndex = 12;
-            this.txtSubnetMask.Text = "...";
+            this.label14.AutoSize = true;
+            this.label14.Enabled = false;
+            this.label14.Location = new System.Drawing.Point(405, 172);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(10, 15);
+            this.label14.TabIndex = 47;
+            this.label14.Text = ".";
             // 
-            // txtDefaultGateway
+            // label15
             // 
-            this.txtDefaultGateway.AllowInternalTab = true;
-            this.txtDefaultGateway.AutoHeight = true;
-            this.txtDefaultGateway.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDefaultGateway.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txtDefaultGateway.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDefaultGateway.Location = new System.Drawing.Point(198, 85);
-            this.txtDefaultGateway.MinimumSize = new System.Drawing.Size(84, 23);
-            this.txtDefaultGateway.Name = "txtDefaultGateway";
-            this.txtDefaultGateway.ReadOnly = false;
-            this.txtDefaultGateway.Size = new System.Drawing.Size(429, 23);
-            this.txtDefaultGateway.TabIndex = 13;
-            this.txtDefaultGateway.Text = "...";
+            this.label15.AutoSize = true;
+            this.label15.Enabled = false;
+            this.label15.Location = new System.Drawing.Point(512, 173);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(10, 15);
+            this.label15.TabIndex = 49;
+            this.label15.Text = ".";
             // 
-            // txtPreferredDns
+            // label16
             // 
-            this.txtPreferredDns.AllowInternalTab = true;
-            this.txtPreferredDns.AutoHeight = true;
-            this.txtPreferredDns.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPreferredDns.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txtPreferredDns.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPreferredDns.Location = new System.Drawing.Point(197, 116);
-            this.txtPreferredDns.MinimumSize = new System.Drawing.Size(84, 23);
-            this.txtPreferredDns.Name = "txtPreferredDns";
-            this.txtPreferredDns.ReadOnly = false;
-            this.txtPreferredDns.Size = new System.Drawing.Size(429, 23);
-            this.txtPreferredDns.TabIndex = 14;
-            this.txtPreferredDns.Text = "...";
+            this.label16.AutoSize = true;
+            this.label16.Enabled = false;
+            this.label16.Location = new System.Drawing.Point(298, 173);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(10, 15);
+            this.label16.TabIndex = 45;
+            this.label16.Text = ".";
             // 
-            // txtAlternateDns
+            // altDnsMi4
             // 
-            this.txtAlternateDns.AllowInternalTab = true;
-            this.txtAlternateDns.AutoHeight = true;
-            this.txtAlternateDns.BackColor = System.Drawing.SystemColors.Window;
-            this.txtAlternateDns.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txtAlternateDns.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAlternateDns.Location = new System.Drawing.Point(197, 145);
-            this.txtAlternateDns.MinimumSize = new System.Drawing.Size(84, 23);
-            this.txtAlternateDns.Name = "txtAlternateDns";
-            this.txtAlternateDns.ReadOnly = false;
-            this.txtAlternateDns.Size = new System.Drawing.Size(429, 23);
-            this.txtAlternateDns.TabIndex = 15;
-            this.txtAlternateDns.Text = "...";
+            this.altDnsMi4.HidePromptOnLeave = true;
+            this.altDnsMi4.Location = new System.Drawing.Point(522, 168);
+            this.altDnsMi4.Mask = "099";
+            this.altDnsMi4.Name = "altDnsMi4";
+            this.altDnsMi4.PromptChar = ' ';
+            this.altDnsMi4.Size = new System.Drawing.Size(97, 23);
+            this.altDnsMi4.TabIndex = 50;
+            this.altDnsMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.altDnsMi4.Enter += new System.EventHandler(this.mi_Enter);
+            this.altDnsMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             // 
-            // txtIpAddress
+            // altDnsMi3
             // 
-            this.txtIpAddress.AllowInternalTab = true;
-            this.txtIpAddress.AutoHeight = true;
-            this.txtIpAddress.BackColor = System.Drawing.SystemColors.Window;
-            this.txtIpAddress.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txtIpAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIpAddress.Location = new System.Drawing.Point(198, 28);
-            this.txtIpAddress.MinimumSize = new System.Drawing.Size(84, 23);
-            this.txtIpAddress.Name = "txtIpAddress";
-            this.txtIpAddress.ReadOnly = false;
-            this.txtIpAddress.Size = new System.Drawing.Size(429, 23);
-            this.txtIpAddress.TabIndex = 11;
-            this.txtIpAddress.Text = "...";
+            this.altDnsMi3.HidePromptOnLeave = true;
+            this.altDnsMi3.Location = new System.Drawing.Point(415, 168);
+            this.altDnsMi3.Mask = "099";
+            this.altDnsMi3.Name = "altDnsMi3";
+            this.altDnsMi3.PromptChar = ' ';
+            this.altDnsMi3.Size = new System.Drawing.Size(97, 23);
+            this.altDnsMi3.TabIndex = 48;
+            this.altDnsMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.altDnsMi3.Enter += new System.EventHandler(this.mi_Enter);
+            // 
+            // altDnsMi2
+            // 
+            this.altDnsMi2.HidePromptOnLeave = true;
+            this.altDnsMi2.Location = new System.Drawing.Point(308, 168);
+            this.altDnsMi2.Mask = "099";
+            this.altDnsMi2.Name = "altDnsMi2";
+            this.altDnsMi2.PromptChar = ' ';
+            this.altDnsMi2.Size = new System.Drawing.Size(97, 23);
+            this.altDnsMi2.TabIndex = 46;
+            this.altDnsMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.altDnsMi2.Enter += new System.EventHandler(this.mi_Enter);
+            // 
+            // altDnsMi1
+            // 
+            this.altDnsMi1.AllowPromptAsInput = false;
+            this.altDnsMi1.HidePromptOnLeave = true;
+            this.altDnsMi1.Location = new System.Drawing.Point(200, 168);
+            this.altDnsMi1.Mask = "099";
+            this.altDnsMi1.Name = "altDnsMi1";
+            this.altDnsMi1.PromptChar = ' ';
+            this.altDnsMi1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.altDnsMi1.ShortcutsEnabled = false;
+            this.altDnsMi1.Size = new System.Drawing.Size(97, 23);
+            this.altDnsMi1.TabIndex = 44;
+            this.altDnsMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.altDnsMi1.Enter += new System.EventHandler(this.mi_Enter);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Enabled = false;
+            this.label11.Location = new System.Drawing.Point(405, 143);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(10, 15);
+            this.label11.TabIndex = 40;
+            this.label11.Text = ".";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Enabled = false;
+            this.label12.Location = new System.Drawing.Point(512, 144);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(10, 15);
+            this.label12.TabIndex = 42;
+            this.label12.Text = ".";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Enabled = false;
+            this.label13.Location = new System.Drawing.Point(298, 144);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(10, 15);
+            this.label13.TabIndex = 38;
+            this.label13.Text = ".";
+            // 
+            // prefDnsMi4
+            // 
+            this.prefDnsMi4.HidePromptOnLeave = true;
+            this.prefDnsMi4.Location = new System.Drawing.Point(522, 139);
+            this.prefDnsMi4.Mask = "099";
+            this.prefDnsMi4.Name = "prefDnsMi4";
+            this.prefDnsMi4.PromptChar = ' ';
+            this.prefDnsMi4.Size = new System.Drawing.Size(97, 23);
+            this.prefDnsMi4.TabIndex = 43;
+            this.prefDnsMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prefDnsMi4.Enter += new System.EventHandler(this.mi_Enter);
+            this.prefDnsMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
+            // 
+            // prefDnsMi3
+            // 
+            this.prefDnsMi3.HidePromptOnLeave = true;
+            this.prefDnsMi3.Location = new System.Drawing.Point(415, 139);
+            this.prefDnsMi3.Mask = "099";
+            this.prefDnsMi3.Name = "prefDnsMi3";
+            this.prefDnsMi3.PromptChar = ' ';
+            this.prefDnsMi3.Size = new System.Drawing.Size(97, 23);
+            this.prefDnsMi3.TabIndex = 41;
+            this.prefDnsMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prefDnsMi3.Enter += new System.EventHandler(this.mi_Enter);
+            // 
+            // prefDnsMi2
+            // 
+            this.prefDnsMi2.HidePromptOnLeave = true;
+            this.prefDnsMi2.Location = new System.Drawing.Point(308, 139);
+            this.prefDnsMi2.Mask = "099";
+            this.prefDnsMi2.Name = "prefDnsMi2";
+            this.prefDnsMi2.PromptChar = ' ';
+            this.prefDnsMi2.Size = new System.Drawing.Size(97, 23);
+            this.prefDnsMi2.TabIndex = 39;
+            this.prefDnsMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prefDnsMi2.Enter += new System.EventHandler(this.mi_Enter);
+            // 
+            // prefDnsMi1
+            // 
+            this.prefDnsMi1.AllowPromptAsInput = false;
+            this.prefDnsMi1.HidePromptOnLeave = true;
+            this.prefDnsMi1.Location = new System.Drawing.Point(200, 139);
+            this.prefDnsMi1.Mask = "099";
+            this.prefDnsMi1.Name = "prefDnsMi1";
+            this.prefDnsMi1.PromptChar = ' ';
+            this.prefDnsMi1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.prefDnsMi1.ShortcutsEnabled = false;
+            this.prefDnsMi1.Size = new System.Drawing.Size(97, 23);
+            this.prefDnsMi1.TabIndex = 37;
+            this.prefDnsMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prefDnsMi1.Enter += new System.EventHandler(this.mi_Enter);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Enabled = false;
+            this.label8.Location = new System.Drawing.Point(405, 112);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(10, 15);
+            this.label8.TabIndex = 33;
+            this.label8.Text = ".";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Enabled = false;
+            this.label9.Location = new System.Drawing.Point(512, 113);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(10, 15);
+            this.label9.TabIndex = 35;
+            this.label9.Text = ".";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Enabled = false;
+            this.label10.Location = new System.Drawing.Point(298, 113);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(10, 15);
+            this.label10.TabIndex = 31;
+            this.label10.Text = ".";
+            // 
+            // gatewayMi4
+            // 
+            this.gatewayMi4.HidePromptOnLeave = true;
+            this.gatewayMi4.Location = new System.Drawing.Point(522, 108);
+            this.gatewayMi4.Mask = "099";
+            this.gatewayMi4.Name = "gatewayMi4";
+            this.gatewayMi4.PromptChar = ' ';
+            this.gatewayMi4.Size = new System.Drawing.Size(97, 23);
+            this.gatewayMi4.TabIndex = 36;
+            this.gatewayMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gatewayMi4.Enter += new System.EventHandler(this.mi_Enter);
+            this.gatewayMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
+            // 
+            // gatewayMi3
+            // 
+            this.gatewayMi3.HidePromptOnLeave = true;
+            this.gatewayMi3.Location = new System.Drawing.Point(415, 108);
+            this.gatewayMi3.Mask = "099";
+            this.gatewayMi3.Name = "gatewayMi3";
+            this.gatewayMi3.PromptChar = ' ';
+            this.gatewayMi3.Size = new System.Drawing.Size(97, 23);
+            this.gatewayMi3.TabIndex = 34;
+            this.gatewayMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gatewayMi3.Enter += new System.EventHandler(this.mi_Enter);
+            // 
+            // gatewayMi2
+            // 
+            this.gatewayMi2.HidePromptOnLeave = true;
+            this.gatewayMi2.Location = new System.Drawing.Point(308, 108);
+            this.gatewayMi2.Mask = "099";
+            this.gatewayMi2.Name = "gatewayMi2";
+            this.gatewayMi2.PromptChar = ' ';
+            this.gatewayMi2.Size = new System.Drawing.Size(97, 23);
+            this.gatewayMi2.TabIndex = 32;
+            this.gatewayMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gatewayMi2.Enter += new System.EventHandler(this.mi_Enter);
+            // 
+            // gatewayMi1
+            // 
+            this.gatewayMi1.AllowPromptAsInput = false;
+            this.gatewayMi1.HidePromptOnLeave = true;
+            this.gatewayMi1.Location = new System.Drawing.Point(200, 108);
+            this.gatewayMi1.Mask = "099";
+            this.gatewayMi1.Name = "gatewayMi1";
+            this.gatewayMi1.PromptChar = ' ';
+            this.gatewayMi1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.gatewayMi1.ShortcutsEnabled = false;
+            this.gatewayMi1.Size = new System.Drawing.Size(97, 23);
+            this.gatewayMi1.TabIndex = 30;
+            this.gatewayMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gatewayMi1.Enter += new System.EventHandler(this.mi_Enter);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Enabled = false;
+            this.label5.Location = new System.Drawing.Point(405, 83);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(10, 15);
+            this.label5.TabIndex = 26;
+            this.label5.Text = ".";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Enabled = false;
+            this.label6.Location = new System.Drawing.Point(512, 84);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(10, 15);
+            this.label6.TabIndex = 28;
+            this.label6.Text = ".";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Enabled = false;
+            this.label7.Location = new System.Drawing.Point(298, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(10, 15);
+            this.label7.TabIndex = 24;
+            this.label7.Text = ".";
+            // 
+            // subnetMi4
+            // 
+            this.subnetMi4.HidePromptOnLeave = true;
+            this.subnetMi4.Location = new System.Drawing.Point(522, 79);
+            this.subnetMi4.Mask = "099";
+            this.subnetMi4.Name = "subnetMi4";
+            this.subnetMi4.PromptChar = ' ';
+            this.subnetMi4.Size = new System.Drawing.Size(97, 23);
+            this.subnetMi4.TabIndex = 29;
+            this.subnetMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.subnetMi4.Enter += new System.EventHandler(this.mi_Enter);
+            this.subnetMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
+            this.subnetMi4.Leave += new System.EventHandler(this.SubnetMaskCheck);
+            // 
+            // subnetMi3
+            // 
+            this.subnetMi3.HidePromptOnLeave = true;
+            this.subnetMi3.Location = new System.Drawing.Point(415, 79);
+            this.subnetMi3.Mask = "099";
+            this.subnetMi3.Name = "subnetMi3";
+            this.subnetMi3.PromptChar = ' ';
+            this.subnetMi3.Size = new System.Drawing.Size(97, 23);
+            this.subnetMi3.TabIndex = 27;
+            this.subnetMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.subnetMi3.Enter += new System.EventHandler(this.mi_Enter);
+            this.subnetMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
+            this.subnetMi3.Leave += new System.EventHandler(this.SubnetMaskCheck);
+            // 
+            // subnetMi2
+            // 
+            this.subnetMi2.HidePromptOnLeave = true;
+            this.subnetMi2.Location = new System.Drawing.Point(308, 79);
+            this.subnetMi2.Mask = "099";
+            this.subnetMi2.Name = "subnetMi2";
+            this.subnetMi2.PromptChar = ' ';
+            this.subnetMi2.Size = new System.Drawing.Size(97, 23);
+            this.subnetMi2.TabIndex = 25;
+            this.subnetMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.subnetMi2.Enter += new System.EventHandler(this.mi_Enter);
+            this.subnetMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
+            this.subnetMi2.Leave += new System.EventHandler(this.SubnetMaskCheck);
+            // 
+            // subnetMi1
+            // 
+            this.subnetMi1.AllowPromptAsInput = false;
+            this.subnetMi1.HidePromptOnLeave = true;
+            this.subnetMi1.Location = new System.Drawing.Point(200, 79);
+            this.subnetMi1.Mask = "099";
+            this.subnetMi1.Name = "subnetMi1";
+            this.subnetMi1.PromptChar = ' ';
+            this.subnetMi1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.subnetMi1.ShortcutsEnabled = false;
+            this.subnetMi1.Size = new System.Drawing.Size(97, 23);
+            this.subnetMi1.TabIndex = 23;
+            this.subnetMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.subnetMi1.Enter += new System.EventHandler(this.mi_Enter);
+            this.subnetMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
+            this.subnetMi1.Leave += new System.EventHandler(this.SubnetMaskCheck);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Enabled = false;
+            this.label4.Location = new System.Drawing.Point(405, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(10, 15);
+            this.label4.TabIndex = 19;
+            this.label4.Text = ".";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Enabled = false;
+            this.label3.Location = new System.Drawing.Point(512, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(10, 15);
+            this.label3.TabIndex = 21;
+            this.label3.Text = ".";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Location = new System.Drawing.Point(298, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(10, 15);
+            this.label1.TabIndex = 17;
+            this.label1.Text = ".";
+            // 
+            // ipMi4
+            // 
+            this.ipMi4.HidePromptOnLeave = true;
+            this.ipMi4.Location = new System.Drawing.Point(522, 51);
+            this.ipMi4.Mask = "099";
+            this.ipMi4.Name = "ipMi4";
+            this.ipMi4.PromptChar = ' ';
+            this.ipMi4.Size = new System.Drawing.Size(97, 23);
+            this.ipMi4.TabIndex = 22;
+            this.ipMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ipMi4.Enter += new System.EventHandler(this.mi_Enter);
+            this.ipMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
+            // 
+            // ipMi3
+            // 
+            this.ipMi3.HidePromptOnLeave = true;
+            this.ipMi3.Location = new System.Drawing.Point(415, 51);
+            this.ipMi3.Mask = "099";
+            this.ipMi3.Name = "ipMi3";
+            this.ipMi3.PromptChar = ' ';
+            this.ipMi3.Size = new System.Drawing.Size(97, 23);
+            this.ipMi3.TabIndex = 20;
+            this.ipMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ipMi3.Enter += new System.EventHandler(this.mi_Enter);
+            this.ipMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
+            // 
+            // ipMi2
+            // 
+            this.ipMi2.HidePromptOnLeave = true;
+            this.ipMi2.Location = new System.Drawing.Point(308, 51);
+            this.ipMi2.Mask = "099";
+            this.ipMi2.Name = "ipMi2";
+            this.ipMi2.PromptChar = ' ';
+            this.ipMi2.Size = new System.Drawing.Size(97, 23);
+            this.ipMi2.TabIndex = 18;
+            this.ipMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ipMi2.Enter += new System.EventHandler(this.mi_Enter);
+            this.ipMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
+            // 
+            // ipMi1
+            // 
+            this.ipMi1.AllowPromptAsInput = false;
+            this.ipMi1.HidePromptOnLeave = true;
+            this.ipMi1.Location = new System.Drawing.Point(200, 51);
+            this.ipMi1.Mask = "099";
+            this.ipMi1.Name = "ipMi1";
+            this.ipMi1.PromptChar = ' ';
+            this.ipMi1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ipMi1.ShortcutsEnabled = false;
+            this.ipMi1.Size = new System.Drawing.Size(97, 23);
+            this.ipMi1.TabIndex = 16;
+            this.ipMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ipMi1.Enter += new System.EventHandler(this.mi_Enter);
+            this.ipMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // textBox6
             // 
@@ -276,7 +681,7 @@
             // lblAlternateDns
             // 
             this.lblAlternateDns.AutoSize = true;
-            this.lblAlternateDns.Location = new System.Drawing.Point(27, 153);
+            this.lblAlternateDns.Location = new System.Drawing.Point(19, 176);
             this.lblAlternateDns.Name = "lblAlternateDns";
             this.lblAlternateDns.Size = new System.Drawing.Size(164, 15);
             this.lblAlternateDns.TabIndex = 4;
@@ -285,7 +690,7 @@
             // lblPreferredDns
             // 
             this.lblPreferredDns.AutoSize = true;
-            this.lblPreferredDns.Location = new System.Drawing.Point(27, 124);
+            this.lblPreferredDns.Location = new System.Drawing.Point(19, 147);
             this.lblPreferredDns.Name = "lblPreferredDns";
             this.lblPreferredDns.Size = new System.Drawing.Size(164, 15);
             this.lblPreferredDns.TabIndex = 3;
@@ -294,7 +699,7 @@
             // lblDefaultGateway
             // 
             this.lblDefaultGateway.AutoSize = true;
-            this.lblDefaultGateway.Location = new System.Drawing.Point(27, 93);
+            this.lblDefaultGateway.Location = new System.Drawing.Point(19, 116);
             this.lblDefaultGateway.Name = "lblDefaultGateway";
             this.lblDefaultGateway.Size = new System.Drawing.Size(98, 15);
             this.lblDefaultGateway.TabIndex = 2;
@@ -303,7 +708,7 @@
             // lblSubnetMask
             // 
             this.lblSubnetMask.AutoSize = true;
-            this.lblSubnetMask.Location = new System.Drawing.Point(27, 64);
+            this.lblSubnetMask.Location = new System.Drawing.Point(19, 87);
             this.lblSubnetMask.Name = "lblSubnetMask";
             this.lblSubnetMask.Size = new System.Drawing.Size(81, 15);
             this.lblSubnetMask.TabIndex = 1;
@@ -312,7 +717,7 @@
             // lblIpAddress
             // 
             this.lblIpAddress.AutoSize = true;
-            this.lblIpAddress.Location = new System.Drawing.Point(27, 36);
+            this.lblIpAddress.Location = new System.Drawing.Point(19, 59);
             this.lblIpAddress.Name = "lblIpAddress";
             this.lblIpAddress.Size = new System.Drawing.Size(68, 15);
             this.lblIpAddress.TabIndex = 0;
@@ -395,13 +800,43 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label lblHangingCompleteHeader;
         private System.Windows.Forms.Label lblCompleteParagraph;
-        private IPAddressControlLib.IPAddressControl txtSubnetMask;
-        private IPAddressControlLib.IPAddressControl txtDefaultGateway;
-        private IPAddressControlLib.IPAddressControl txtPreferredDns;
-        private IPAddressControlLib.IPAddressControl txtAlternateDns;
-        private IPAddressControlLib.IPAddressControl txtIpAddress;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox rtbMainLabel;
         private System.Windows.Forms.RichTextBox rtbHeader;
+        private System.Windows.Forms.MaskedTextBox ipMi4;
+        private System.Windows.Forms.MaskedTextBox ipMi3;
+        private System.Windows.Forms.MaskedTextBox ipMi2;
+        private System.Windows.Forms.MaskedTextBox ipMi1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.MaskedTextBox altDnsMi4;
+        private System.Windows.Forms.MaskedTextBox altDnsMi3;
+        private System.Windows.Forms.MaskedTextBox altDnsMi2;
+        private System.Windows.Forms.MaskedTextBox altDnsMi1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.MaskedTextBox prefDnsMi4;
+        private System.Windows.Forms.MaskedTextBox prefDnsMi3;
+        private System.Windows.Forms.MaskedTextBox prefDnsMi2;
+        private System.Windows.Forms.MaskedTextBox prefDnsMi1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.MaskedTextBox gatewayMi4;
+        private System.Windows.Forms.MaskedTextBox gatewayMi3;
+        private System.Windows.Forms.MaskedTextBox gatewayMi2;
+        private System.Windows.Forms.MaskedTextBox gatewayMi1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MaskedTextBox subnetMi4;
+        private System.Windows.Forms.MaskedTextBox subnetMi3;
+        private System.Windows.Forms.MaskedTextBox subnetMi2;
+        private System.Windows.Forms.MaskedTextBox subnetMi1;
     }
 }
