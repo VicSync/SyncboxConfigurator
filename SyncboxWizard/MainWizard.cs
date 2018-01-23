@@ -335,8 +335,10 @@ namespace SyncboxWizard
             preferredValid = (IPAddress.TryParse(fullPrefDnsText, out var dns1)) && fullPrefDnsText != fullAltDnsText && fullPrefDnsText != fullIpText && invalidEntries.Contains(fullPrefDnsText) != true ? true : false;
             alternateValid = (IPAddress.TryParse(fullAltDnsText, out var dns2) || fullAltDnsText.Length == 3) && fullPrefDnsText != fullAltDnsText && fullAltDnsText != fullIpText && invalidEntries.Contains(fullAltDnsText) != true ? true : false;
 
-
-
+            lblIpError.Visible = (!ipValid && fullIpText.Length !=3) ? true: false;
+            lblSubnetError.Visible = (!subnetValid && fullSubnetText.Length != 3) ? true : false;
+            lblPreferredError.Visible = (!preferredValid && fullPrefDnsText.Length != 3) ? true : false;
+            
             result = (ipValid == true && subnetValid == true && gatewayValid == true && preferredValid == true && alternateValid == true) ? true : false;
             return result;
         }
@@ -419,7 +421,5 @@ namespace SyncboxWizard
         // string array containing all invalid octet entries
         public string[] invalidEntries = new string[]{ "0.0.0.0", "255.255.255.255" };
 
-
-        
     }
 }

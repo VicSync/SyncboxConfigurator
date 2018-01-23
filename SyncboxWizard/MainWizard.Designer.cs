@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWizard));
             this.wizardControl1 = new AeroWizard.WizardControl();
             this.Introduction = new AeroWizard.WizardPage();
@@ -39,6 +40,11 @@
             this.txtCallsign = new System.Windows.Forms.TextBox();
             this.lblCallsign = new System.Windows.Forms.Label();
             this.NetworkDetails = new AeroWizard.WizardPage();
+            this.lblNetworkError = new System.Windows.Forms.Label();
+            this.lblSubnetError = new System.Windows.Forms.Label();
+            this.lblEntryError = new System.Windows.Forms.Label();
+            this.lblPreferredError = new System.Windows.Forms.Label();
+            this.lblIpError = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -84,6 +90,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblCompleteParagraph = new System.Windows.Forms.Label();
             this.lblHangingCompleteHeader = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.Introduction.SuspendLayout();
             this.NetworkPreconfiguration.SuspendLayout();
@@ -202,6 +209,11 @@
             // 
             // NetworkDetails
             // 
+            this.NetworkDetails.Controls.Add(this.lblNetworkError);
+            this.NetworkDetails.Controls.Add(this.lblSubnetError);
+            this.NetworkDetails.Controls.Add(this.lblEntryError);
+            this.NetworkDetails.Controls.Add(this.lblPreferredError);
+            this.NetworkDetails.Controls.Add(this.lblIpError);
             this.NetworkDetails.Controls.Add(this.label14);
             this.NetworkDetails.Controls.Add(this.label15);
             this.NetworkDetails.Controls.Add(this.label16);
@@ -248,6 +260,55 @@
             this.NetworkDetails.Size = new System.Drawing.Size(630, 357);
             this.NetworkDetails.TabIndex = 2;
             this.NetworkDetails.Text = "Fill out your Network Details";
+            // 
+            // lblNetworkError
+            // 
+            this.lblNetworkError.AutoSize = true;
+            this.lblNetworkError.Location = new System.Drawing.Point(50, 254);
+            this.lblNetworkError.Name = "lblNetworkError";
+            this.lblNetworkError.Size = new System.Drawing.Size(0, 15);
+            this.lblNetworkError.TabIndex = 55;
+            // 
+            // lblSubnetError
+            // 
+            this.lblSubnetError.AutoSize = true;
+            this.lblSubnetError.ForeColor = System.Drawing.Color.Red;
+            this.lblSubnetError.Location = new System.Drawing.Point(50, 294);
+            this.lblSubnetError.Name = "lblSubnetError";
+            this.lblSubnetError.Size = new System.Drawing.Size(325, 15);
+            this.lblSubnetError.TabIndex = 54;
+            this.lblSubnetError.Text = "Subnet Mask CANNOT match IP Address or Default Gateway";
+            // 
+            // lblEntryError
+            // 
+            this.lblEntryError.AutoSize = true;
+            this.lblEntryError.ForeColor = System.Drawing.Color.Black;
+            this.lblEntryError.Location = new System.Drawing.Point(290, 218);
+            this.lblEntryError.Name = "lblEntryError";
+            this.lblEntryError.Size = new System.Drawing.Size(253, 15);
+            this.lblEntryError.TabIndex = 53;
+            this.lblEntryError.Text = "0.0.0.0 and 255.255.255.255 are not valid entries";
+            // 
+            // lblPreferredError
+            // 
+            this.lblPreferredError.AutoSize = true;
+            this.lblPreferredError.ForeColor = System.Drawing.Color.Red;
+            this.lblPreferredError.Location = new System.Drawing.Point(50, 319);
+            this.lblPreferredError.Name = "lblPreferredError";
+            this.lblPreferredError.Size = new System.Drawing.Size(247, 15);
+            this.lblPreferredError.TabIndex = 52;
+            this.lblPreferredError.Text = "Preferred DNS CANNOT match Alternate DNS";
+            // 
+            // lblIpError
+            // 
+            this.lblIpError.AutoSize = true;
+            this.lblIpError.ForeColor = System.Drawing.Color.Red;
+            this.lblIpError.Location = new System.Drawing.Point(50, 269);
+            this.lblIpError.Name = "lblIpError";
+            this.lblIpError.Size = new System.Drawing.Size(485, 15);
+            this.lblIpError.TabIndex = 51;
+            this.lblIpError.Text = "IP Address CANNOT match Subnet mask, Default Gateway, Preferred DNS or Alternate " +
+    "DNS";
             // 
             // label14
             // 
@@ -535,6 +596,7 @@
             this.subnetMi4.Size = new System.Drawing.Size(97, 23);
             this.subnetMi4.TabIndex = 29;
             this.subnetMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.subnetMi4, "Options: 0,128,192,224,240,248,252, 254");
             this.subnetMi4.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             this.subnetMi4.Leave += new System.EventHandler(this.SubnetMaskCheck);
@@ -549,6 +611,7 @@
             this.subnetMi3.Size = new System.Drawing.Size(97, 23);
             this.subnetMi3.TabIndex = 27;
             this.subnetMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.subnetMi3, "Options: 0,128,192,224,240,248,252, 254 and 255");
             this.subnetMi3.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
             this.subnetMi3.Leave += new System.EventHandler(this.SubnetMaskCheck);
@@ -563,6 +626,7 @@
             this.subnetMi2.Size = new System.Drawing.Size(97, 23);
             this.subnetMi2.TabIndex = 25;
             this.subnetMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.subnetMi2, "Options: 0,128,192,224,240,248,252, 254 and 255");
             this.subnetMi2.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
             this.subnetMi2.Leave += new System.EventHandler(this.SubnetMaskCheck);
@@ -580,6 +644,7 @@
             this.subnetMi1.Size = new System.Drawing.Size(97, 23);
             this.subnetMi1.TabIndex = 23;
             this.subnetMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.subnetMi1, "Options: 0,128,192,224,240,248,252, 254 and 255\r\n");
             this.subnetMi1.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
             this.subnetMi1.Leave += new System.EventHandler(this.SubnetMaskCheck);
@@ -624,6 +689,7 @@
             this.ipMi4.Size = new System.Drawing.Size(97, 23);
             this.ipMi4.TabIndex = 22;
             this.ipMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.ipMi4, "Cannot be 255");
             this.ipMi4.Enter += new System.EventHandler(this.mi_Enter);
             this.ipMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             // 
@@ -838,5 +904,11 @@
         private System.Windows.Forms.MaskedTextBox subnetMi3;
         private System.Windows.Forms.MaskedTextBox subnetMi2;
         private System.Windows.Forms.MaskedTextBox subnetMi1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblIpError;
+        private System.Windows.Forms.Label lblNetworkError;
+        private System.Windows.Forms.Label lblSubnetError;
+        private System.Windows.Forms.Label lblEntryError;
+        private System.Windows.Forms.Label lblPreferredError;
     }
 }
