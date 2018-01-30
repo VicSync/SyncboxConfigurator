@@ -311,6 +311,21 @@ namespace SyncboxWizard
             input.SelectionStart = 0;
         }
 
+        // Ensures user clicking in textbox is always at the current index
+        private void CurserIndexCheck(object sender, EventArgs e)
+        {
+            MaskedTextBox box = sender as MaskedTextBox;
+            try
+            {
+                box.Select(box.Text.Length, 0);
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+        }
 
 
 
@@ -337,10 +352,10 @@ namespace SyncboxWizard
 
             lblIpError.Visible = (!ipValid && fullIpText.Length !=3) ? true: false;
             lblSubnetError.Visible = (!subnetValid && fullSubnetText.Length != 3) ? true : false;
-            lblPreferredError.Visible = (!preferredValid && fullPrefDnsText.Length != 3) ? true : false;
+            lblPreferredError.Visible = (!preferredValid && fullPrefDnsText.Length != 3) ? true : false; 
             
             result = (ipValid == true && subnetValid == true && gatewayValid == true && preferredValid == true && alternateValid == true) ? true : false;
-            return result;
+            return result; 
         }
 
         //Checks to ensure the application is running on a synbak drive and the drive is currently inserted
@@ -365,23 +380,15 @@ namespace SyncboxWizard
                         switch (wizardControl1.SelectedPage.Name) {
                             case "Introduction":
                                 Introduction.AllowNext = (volumeLabel.Equals("SYNCBAK")) ? true : false;
-                                //Above is for production, Below is for dev
-                                //Introduction.AllowNext = true;
                                 break;
                             case "Conclusion":
                                 Conclusion.AllowNext = (volumeLabel.Equals("SYNCBAK")) ? true : false;
-                                //Above is for production, Below is for dev
-                                //Conclusion.AllowNext = true;
                                 break;
                             case "NetworkPreconfiguration":
                                 NetworkPreconfiguration.AllowNext = (volumeLabel.Equals("SYNCBAK")) && callsignvalid ? true : false;
-                                //Above is for production, Below is for dev
-                                //NetworkPreconfiguration.AllowNext = true;
                                 break;
                             case "NetworkDetails": 
                                 NetworkDetails.AllowNext = (volumeLabel.Equals("SYNCBAK")) && VerifyIPSettings() ? true : false;
-                                //Above is for production, Below is for dev
-                                //NetworkDetails.AllowNext = true;
                                 break;  
                         }
                         
@@ -389,19 +396,13 @@ namespace SyncboxWizard
                     else
                     {
                         wizardControl1.SelectedPage.AllowNext = false;
-                        //Above is for production, Below is for dev 
-                        //wizardControl1.SelectedPage.AllowNext = true;
-
-
-
+                        
                     }
                                         
                 }
                 catch(Exception ex)
                 {
                     wizardControl1.SelectedPage.AllowNext = false;
-                    //Above is for production, Below is for dev
-                    //wizardControl1.SelectedPage.AllowNext = true; 
                 }
                 
             }
@@ -421,5 +422,6 @@ namespace SyncboxWizard
         // string array containing all invalid octet entries
         public string[] invalidEntries = new string[]{ "0.0.0.0", "255.255.255.255" };
 
+        
     }
 }

@@ -350,6 +350,7 @@
             this.altDnsMi4.Size = new System.Drawing.Size(97, 23);
             this.altDnsMi4.TabIndex = 50;
             this.altDnsMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.altDnsMi4.Click += new System.EventHandler(this.CurserIndexCheck);
             this.altDnsMi4.Enter += new System.EventHandler(this.mi_Enter);
             this.altDnsMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             // 
@@ -363,7 +364,9 @@
             this.altDnsMi3.Size = new System.Drawing.Size(97, 23);
             this.altDnsMi3.TabIndex = 48;
             this.altDnsMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.altDnsMi3.Click += new System.EventHandler(this.CurserIndexCheck);
             this.altDnsMi3.Enter += new System.EventHandler(this.mi_Enter);
+            this.altDnsMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // altDnsMi2
             // 
@@ -375,7 +378,9 @@
             this.altDnsMi2.Size = new System.Drawing.Size(97, 23);
             this.altDnsMi2.TabIndex = 46;
             this.altDnsMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.altDnsMi2.Click += new System.EventHandler(this.CurserIndexCheck);
             this.altDnsMi2.Enter += new System.EventHandler(this.mi_Enter);
+            this.altDnsMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // altDnsMi1
             // 
@@ -390,7 +395,9 @@
             this.altDnsMi1.Size = new System.Drawing.Size(97, 23);
             this.altDnsMi1.TabIndex = 44;
             this.altDnsMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.altDnsMi1.Click += new System.EventHandler(this.CurserIndexCheck);
             this.altDnsMi1.Enter += new System.EventHandler(this.mi_Enter);
+            this.altDnsMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // label11
             // 
@@ -432,6 +439,7 @@
             this.prefDnsMi4.Size = new System.Drawing.Size(97, 23);
             this.prefDnsMi4.TabIndex = 43;
             this.prefDnsMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prefDnsMi4.Click += new System.EventHandler(this.CurserIndexCheck);
             this.prefDnsMi4.Enter += new System.EventHandler(this.mi_Enter);
             this.prefDnsMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             // 
@@ -445,7 +453,9 @@
             this.prefDnsMi3.Size = new System.Drawing.Size(97, 23);
             this.prefDnsMi3.TabIndex = 41;
             this.prefDnsMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prefDnsMi3.Click += new System.EventHandler(this.CurserIndexCheck);
             this.prefDnsMi3.Enter += new System.EventHandler(this.mi_Enter);
+            this.prefDnsMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // prefDnsMi2
             // 
@@ -457,7 +467,9 @@
             this.prefDnsMi2.Size = new System.Drawing.Size(97, 23);
             this.prefDnsMi2.TabIndex = 39;
             this.prefDnsMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prefDnsMi2.Click += new System.EventHandler(this.CurserIndexCheck);
             this.prefDnsMi2.Enter += new System.EventHandler(this.mi_Enter);
+            this.prefDnsMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // prefDnsMi1
             // 
@@ -472,7 +484,9 @@
             this.prefDnsMi1.Size = new System.Drawing.Size(97, 23);
             this.prefDnsMi1.TabIndex = 37;
             this.prefDnsMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.prefDnsMi1.Click += new System.EventHandler(this.CurserIndexCheck);
             this.prefDnsMi1.Enter += new System.EventHandler(this.mi_Enter);
+            this.prefDnsMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // label8
             // 
@@ -514,6 +528,7 @@
             this.gatewayMi4.Size = new System.Drawing.Size(97, 23);
             this.gatewayMi4.TabIndex = 36;
             this.gatewayMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gatewayMi4.Click += new System.EventHandler(this.CurserIndexCheck);
             this.gatewayMi4.Enter += new System.EventHandler(this.mi_Enter);
             this.gatewayMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             // 
@@ -527,7 +542,9 @@
             this.gatewayMi3.Size = new System.Drawing.Size(97, 23);
             this.gatewayMi3.TabIndex = 34;
             this.gatewayMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gatewayMi3.Click += new System.EventHandler(this.CurserIndexCheck);
             this.gatewayMi3.Enter += new System.EventHandler(this.mi_Enter);
+            this.gatewayMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // gatewayMi2
             // 
@@ -539,7 +556,9 @@
             this.gatewayMi2.Size = new System.Drawing.Size(97, 23);
             this.gatewayMi2.TabIndex = 32;
             this.gatewayMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gatewayMi2.Click += new System.EventHandler(this.CurserIndexCheck);
             this.gatewayMi2.Enter += new System.EventHandler(this.mi_Enter);
+            this.gatewayMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // gatewayMi1
             // 
@@ -554,7 +573,9 @@
             this.gatewayMi1.Size = new System.Drawing.Size(97, 23);
             this.gatewayMi1.TabIndex = 30;
             this.gatewayMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gatewayMi1.Click += new System.EventHandler(this.CurserIndexCheck);
             this.gatewayMi1.Enter += new System.EventHandler(this.mi_Enter);
+            this.gatewayMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // label5
             // 
@@ -597,6 +618,7 @@
             this.subnetMi4.TabIndex = 29;
             this.subnetMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.subnetMi4, "Options: 0,128,192,224,240,248,252, 254");
+            this.subnetMi4.Click += new System.EventHandler(this.CurserIndexCheck);
             this.subnetMi4.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             this.subnetMi4.Leave += new System.EventHandler(this.SubnetMaskCheck);
@@ -612,6 +634,7 @@
             this.subnetMi3.TabIndex = 27;
             this.subnetMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.subnetMi3, "Options: 0,128,192,224,240,248,252, 254 and 255");
+            this.subnetMi3.Click += new System.EventHandler(this.CurserIndexCheck);
             this.subnetMi3.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
             this.subnetMi3.Leave += new System.EventHandler(this.SubnetMaskCheck);
@@ -627,6 +650,7 @@
             this.subnetMi2.TabIndex = 25;
             this.subnetMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.subnetMi2, "Options: 0,128,192,224,240,248,252, 254 and 255");
+            this.subnetMi2.Click += new System.EventHandler(this.CurserIndexCheck);
             this.subnetMi2.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
             this.subnetMi2.Leave += new System.EventHandler(this.SubnetMaskCheck);
@@ -645,6 +669,7 @@
             this.subnetMi1.TabIndex = 23;
             this.subnetMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.subnetMi1, "Options: 0,128,192,224,240,248,252, 254 and 255\r\n");
+            this.subnetMi1.Click += new System.EventHandler(this.CurserIndexCheck);
             this.subnetMi1.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
             this.subnetMi1.Leave += new System.EventHandler(this.SubnetMaskCheck);
@@ -690,6 +715,7 @@
             this.ipMi4.TabIndex = 22;
             this.ipMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.ipMi4, "Cannot be 255");
+            this.ipMi4.Click += new System.EventHandler(this.CurserIndexCheck);
             this.ipMi4.Enter += new System.EventHandler(this.mi_Enter);
             this.ipMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             // 
@@ -703,6 +729,7 @@
             this.ipMi3.Size = new System.Drawing.Size(97, 23);
             this.ipMi3.TabIndex = 20;
             this.ipMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ipMi3.Click += new System.EventHandler(this.CurserIndexCheck);
             this.ipMi3.Enter += new System.EventHandler(this.mi_Enter);
             this.ipMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
@@ -716,6 +743,7 @@
             this.ipMi2.Size = new System.Drawing.Size(97, 23);
             this.ipMi2.TabIndex = 18;
             this.ipMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ipMi2.Click += new System.EventHandler(this.CurserIndexCheck);
             this.ipMi2.Enter += new System.EventHandler(this.mi_Enter);
             this.ipMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
@@ -732,6 +760,7 @@
             this.ipMi1.Size = new System.Drawing.Size(97, 23);
             this.ipMi1.TabIndex = 16;
             this.ipMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ipMi1.Click += new System.EventHandler(this.CurserIndexCheck);
             this.ipMi1.Enter += new System.EventHandler(this.mi_Enter);
             this.ipMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
