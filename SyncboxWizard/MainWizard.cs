@@ -327,6 +327,22 @@ namespace SyncboxWizard
 
         }
 
+        // Ensures the user cannot press arrow keys, back, or home. This will prevent empty strings from being entered in the IP textboxes
+        private void IgnoreArrowKey(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 35 || e.KeyValue == 36 || e.KeyValue == 37 || e.KeyValue == 38 || e.KeyValue == 39 || e.KeyValue == 40)
+            {
+                try
+                {
+                    e.SuppressKeyPress = true;
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+        }
+
 
 
         /** Private helper methods **/
@@ -343,17 +359,27 @@ namespace SyncboxWizard
             string fullGatewayText = gatewayMi1.Text + "." + gatewayMi2.Text + "." + gatewayMi3.Text + "." + gatewayMi4.Text;
             string fullPrefDnsText = prefDnsMi1.Text + "." + prefDnsMi2.Text + "." + prefDnsMi3.Text + "." + prefDnsMi4.Text;
             string fullAltDnsText = altDnsMi1.Text + "." + altDnsMi2.Text + "." + altDnsMi3.Text + "." + altDnsMi4.Text;
-            
+
+            // Validates the ip's and sets the boolean triggers
             ipValid = (IPAddress.TryParse(fullIpText, out var ip)) && fullIpText != fullGatewayText && fullIpText != fullAltDnsText && fullIpText != fullPrefDnsText && invalidEntries.Contains(fullIpText) != true ? true : false;
             subnetValid = (IPAddress.TryParse(fullSubnetText, out var sub)) && fullSubnetText != fullIpText && fullSubnetText != fullGatewayText && invalidEntries.Contains(fullSubnetText) != true ? true : false;
-            gatewayValid = (IPAddress.TryParse(fullGatewayText, out var gw)) && fullIpText != fullGatewayText && invalidEntries.Contains(fullGatewayText) != true ? true : false;
+            gatewayValid = (IPAddress.TryParse(fullGatewayText, out var gw)) && fullIpText != fullGatewayText && fullGatewayText != fullSubnetText && invalidEntries.Contains(fullGatewayText) != true ? true : false;
             preferredValid = (IPAddress.TryParse(fullPrefDnsText, out var dns1)) && fullPrefDnsText != fullAltDnsText && fullPrefDnsText != fullIpText && invalidEntries.Contains(fullPrefDnsText) != true ? true : false;
             alternateValid = (IPAddress.TryParse(fullAltDnsText, out var dns2) || fullAltDnsText.Length == 3) && fullPrefDnsText != fullAltDnsText && fullAltDnsText != fullIpText && invalidEntries.Contains(fullAltDnsText) != true ? true : false;
 
-            lblIpError.Visible = (!ipValid && fullIpText.Length !=3) ? true: false;
-            lblSubnetError.Visible = (!subnetValid && fullSubnetText.Length != 3) ? true : false;
-            lblPreferredError.Visible = (!preferredValid && fullPrefDnsText.Length != 3) ? true : false; 
-            
+            // Shows or hides the ip error messages
+            lblIpError.Visible = ((fullIpText.Equals(fullSubnetText) || fullIpText.Equals(fullGatewayText) || fullIpText.Equals(fullPrefDnsText) || fullIpText.Equals(fullAltDnsText)) && fullIpText.Length != 3) ? true : false;
+            lblSubnetError.Visible = ((fullSubnetText.Equals(fullIpText) || fullSubnetText.Equals(fullGatewayText)) && fullSubnetText.Length != 3) ? true : false;
+            lblPreferredError.Visible = (fullPrefDnsText.Equals(fullAltDnsText) && fullPrefDnsText.Length != 3) ? true : false;
+
+            // Changes the texbox content color based on tha validated triggers
+            ChangeColor(new MaskedTextBox[] { ipMi1, ipMi2, ipMi3, ipMi4 }, ipValid);
+            ChangeColor(new MaskedTextBox[] { subnetMi1, subnetMi2, subnetMi3, subnetMi4 }, subnetValid);
+            ChangeColor(new MaskedTextBox[] { gatewayMi1, gatewayMi2, gatewayMi3, gatewayMi4 }, gatewayValid);
+            ChangeColor(new MaskedTextBox[] { prefDnsMi1, prefDnsMi2, prefDnsMi3, prefDnsMi4 }, preferredValid);
+            ChangeColor(new MaskedTextBox[] { altDnsMi1, altDnsMi2, altDnsMi3, altDnsMi4 }, alternateValid);
+
+
             result = (ipValid == true && subnetValid == true && gatewayValid == true && preferredValid == true && alternateValid == true) ? true : false;
             return result; 
         }
@@ -408,9 +434,18 @@ namespace SyncboxWizard
             }
             
         }
-        
 
-         
+        //Turn text boxes red
+        private void ChangeColor(MaskedTextBox[] boxes, bool valid)
+        {
+            foreach (var box in boxes)
+            {
+                box.ForeColor = (valid == true) ? Color.Black : Color.Red;
+            }
+        }
+
+
+
         /* Arrays and enums */
 
         // Enum of acceptable keycodes to be used in the octets. Contains the keycodes for all number keys on a keyboard 
@@ -422,6 +457,6 @@ namespace SyncboxWizard
         // string array containing all invalid octet entries
         public string[] invalidEntries = new string[]{ "0.0.0.0", "255.255.255.255" };
 
-        
+       
     }
 }

@@ -129,10 +129,12 @@
             // 
             // rtbHeader
             // 
+            this.rtbHeader.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rtbHeader.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbHeader.Location = new System.Drawing.Point(4, 4);
             this.rtbHeader.Multiline = false;
             this.rtbHeader.Name = "rtbHeader";
+            this.rtbHeader.ReadOnly = true;
             this.rtbHeader.Size = new System.Drawing.Size(623, 29);
             this.rtbHeader.TabIndex = 5;
             this.rtbHeader.Text = "This wizard will help you configure the SyncboxTM. The following items are needed" +
@@ -352,6 +354,7 @@
             this.altDnsMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.altDnsMi4.Click += new System.EventHandler(this.CurserIndexCheck);
             this.altDnsMi4.Enter += new System.EventHandler(this.mi_Enter);
+            this.altDnsMi4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.altDnsMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             // 
             // altDnsMi3
@@ -366,6 +369,7 @@
             this.altDnsMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.altDnsMi3.Click += new System.EventHandler(this.CurserIndexCheck);
             this.altDnsMi3.Enter += new System.EventHandler(this.mi_Enter);
+            this.altDnsMi3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.altDnsMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // altDnsMi2
@@ -380,6 +384,7 @@
             this.altDnsMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.altDnsMi2.Click += new System.EventHandler(this.CurserIndexCheck);
             this.altDnsMi2.Enter += new System.EventHandler(this.mi_Enter);
+            this.altDnsMi2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.altDnsMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // altDnsMi1
@@ -397,6 +402,7 @@
             this.altDnsMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.altDnsMi1.Click += new System.EventHandler(this.CurserIndexCheck);
             this.altDnsMi1.Enter += new System.EventHandler(this.mi_Enter);
+            this.altDnsMi1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.altDnsMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // label11
@@ -441,6 +447,7 @@
             this.prefDnsMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.prefDnsMi4.Click += new System.EventHandler(this.CurserIndexCheck);
             this.prefDnsMi4.Enter += new System.EventHandler(this.mi_Enter);
+            this.prefDnsMi4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.prefDnsMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             // 
             // prefDnsMi3
@@ -455,6 +462,7 @@
             this.prefDnsMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.prefDnsMi3.Click += new System.EventHandler(this.CurserIndexCheck);
             this.prefDnsMi3.Enter += new System.EventHandler(this.mi_Enter);
+            this.prefDnsMi3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.prefDnsMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // prefDnsMi2
@@ -469,6 +477,7 @@
             this.prefDnsMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.prefDnsMi2.Click += new System.EventHandler(this.CurserIndexCheck);
             this.prefDnsMi2.Enter += new System.EventHandler(this.mi_Enter);
+            this.prefDnsMi2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.prefDnsMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // prefDnsMi1
@@ -486,6 +495,7 @@
             this.prefDnsMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.prefDnsMi1.Click += new System.EventHandler(this.CurserIndexCheck);
             this.prefDnsMi1.Enter += new System.EventHandler(this.mi_Enter);
+            this.prefDnsMi1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.prefDnsMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // label8
@@ -530,6 +540,7 @@
             this.gatewayMi4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gatewayMi4.Click += new System.EventHandler(this.CurserIndexCheck);
             this.gatewayMi4.Enter += new System.EventHandler(this.mi_Enter);
+            this.gatewayMi4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.gatewayMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             // 
             // gatewayMi3
@@ -544,6 +555,7 @@
             this.gatewayMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gatewayMi3.Click += new System.EventHandler(this.CurserIndexCheck);
             this.gatewayMi3.Enter += new System.EventHandler(this.mi_Enter);
+            this.gatewayMi3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.gatewayMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // gatewayMi2
@@ -558,6 +570,7 @@
             this.gatewayMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gatewayMi2.Click += new System.EventHandler(this.CurserIndexCheck);
             this.gatewayMi2.Enter += new System.EventHandler(this.mi_Enter);
+            this.gatewayMi2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.gatewayMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // gatewayMi1
@@ -575,6 +588,7 @@
             this.gatewayMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gatewayMi1.Click += new System.EventHandler(this.CurserIndexCheck);
             this.gatewayMi1.Enter += new System.EventHandler(this.mi_Enter);
+            this.gatewayMi1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.gatewayMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // label5
@@ -620,6 +634,7 @@
             this.toolTip1.SetToolTip(this.subnetMi4, "Options: 0,128,192,224,240,248,252, 254");
             this.subnetMi4.Click += new System.EventHandler(this.CurserIndexCheck);
             this.subnetMi4.Enter += new System.EventHandler(this.mi_Enter);
+            this.subnetMi4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.subnetMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             this.subnetMi4.Leave += new System.EventHandler(this.SubnetMaskCheck);
             // 
@@ -636,6 +651,7 @@
             this.toolTip1.SetToolTip(this.subnetMi3, "Options: 0,128,192,224,240,248,252, 254 and 255");
             this.subnetMi3.Click += new System.EventHandler(this.CurserIndexCheck);
             this.subnetMi3.Enter += new System.EventHandler(this.mi_Enter);
+            this.subnetMi3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.subnetMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
             this.subnetMi3.Leave += new System.EventHandler(this.SubnetMaskCheck);
             // 
@@ -652,6 +668,7 @@
             this.toolTip1.SetToolTip(this.subnetMi2, "Options: 0,128,192,224,240,248,252, 254 and 255");
             this.subnetMi2.Click += new System.EventHandler(this.CurserIndexCheck);
             this.subnetMi2.Enter += new System.EventHandler(this.mi_Enter);
+            this.subnetMi2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.subnetMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
             this.subnetMi2.Leave += new System.EventHandler(this.SubnetMaskCheck);
             // 
@@ -671,6 +688,7 @@
             this.toolTip1.SetToolTip(this.subnetMi1, "Options: 0,128,192,224,240,248,252, 254 and 255\r\n");
             this.subnetMi1.Click += new System.EventHandler(this.CurserIndexCheck);
             this.subnetMi1.Enter += new System.EventHandler(this.mi_Enter);
+            this.subnetMi1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.subnetMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
             this.subnetMi1.Leave += new System.EventHandler(this.SubnetMaskCheck);
             // 
@@ -717,6 +735,7 @@
             this.toolTip1.SetToolTip(this.ipMi4, "Cannot be 255");
             this.ipMi4.Click += new System.EventHandler(this.CurserIndexCheck);
             this.ipMi4.Enter += new System.EventHandler(this.mi_Enter);
+            this.ipMi4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.ipMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
             // 
             // ipMi3
@@ -731,6 +750,7 @@
             this.ipMi3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ipMi3.Click += new System.EventHandler(this.CurserIndexCheck);
             this.ipMi3.Enter += new System.EventHandler(this.mi_Enter);
+            this.ipMi3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.ipMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // ipMi2
@@ -745,6 +765,7 @@
             this.ipMi2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ipMi2.Click += new System.EventHandler(this.CurserIndexCheck);
             this.ipMi2.Enter += new System.EventHandler(this.mi_Enter);
+            this.ipMi2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.ipMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // ipMi1
@@ -762,13 +783,16 @@
             this.ipMi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ipMi1.Click += new System.EventHandler(this.CurserIndexCheck);
             this.ipMi1.Enter += new System.EventHandler(this.mi_Enter);
+            this.ipMi1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.ipMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StandardNumberInput);
             // 
             // textBox6
             // 
+            this.textBox6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Location = new System.Drawing.Point(3, 1);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(540, 16);
             this.textBox6.TabIndex = 10;
             this.textBox6.Text = "All of the fields except the Alternate DNS server address are required.";
