@@ -255,14 +255,24 @@ namespace SyncboxWizard
 
         }
 
-        //Ensure key entered is a number, otherwise surpress the keypress
+        //Ensure key entered is a number, otherwise surpress the keypress. If number check iff text is a valid subnet ip
         public void subnetNumberInput(object sender, KeyEventArgs e)
         {
             MaskedTextBox textBox = sender as MaskedTextBox;
 
             if (Enum.IsDefined(typeof(numberKeycodes), e.KeyCode.ToString()))
             {
-
+                if (textBox.Text.Length > 0)
+                {
+                    if (subnetOptions.Contains(int.Parse(textBox.Text)) == false)
+                    {
+                        ChangeColor(new MaskedTextBox[] { textBox }, false);
+                    }
+                    else
+                    {
+                        ChangeColor(new MaskedTextBox[] { textBox }, true);
+                    }
+                }
             }
             else
             {
@@ -287,21 +297,6 @@ namespace SyncboxWizard
                 }
 
             }
-        }
-
-        //When a subnet control has lost focus, checks to see if text is an acceptable subnet octet, else resets the box
-        private void SubnetMaskCheck(object sender, EventArgs e)
-        {
-            MaskedTextBox textBox = sender as MaskedTextBox;
-            if (textBox.Text.Length > 0)
-            {
-                if (subnetOptions.Contains(int.Parse(textBox.Text)) == false)
-                {
-                    textBox.Clear();
-                }
-            }
-
-
         }
 
         // Puts the curser at index 0 when entering a textbox
@@ -362,7 +357,7 @@ namespace SyncboxWizard
 
             // Validates the ip's and sets the boolean triggers
             ipValid = (IPAddress.TryParse(fullIpText, out var ip)) && fullIpText != fullGatewayText && fullIpText != fullAltDnsText && fullIpText != fullPrefDnsText && invalidEntries.Contains(fullIpText) != true ? true : false;
-            subnetValid = (IPAddress.TryParse(fullSubnetText, out var sub)) && fullSubnetText != fullIpText && fullSubnetText != fullGatewayText && invalidEntries.Contains(fullSubnetText) != true ? true : false;
+            subnetValid = (IPAddress.TryParse(fullSubnetText, out var sub)) && fullSubnetText != fullIpText && fullSubnetText != fullGatewayText && invalidEntries.Contains(fullSubnetText) != true && subnetOptions.Contains(int.Parse(subnetMi1.Text)) != false && subnetOptions.Contains(int.Parse(subnetMi2.Text)) != false && subnetOptions.Contains(int.Parse(subnetMi3.Text)) != false && subnetOptions.Contains(int.Parse(subnetMi4.Text)) != false ? true : false;
             gatewayValid = (IPAddress.TryParse(fullGatewayText, out var gw)) && fullIpText != fullGatewayText && fullGatewayText != fullSubnetText && invalidEntries.Contains(fullGatewayText) != true ? true : false;
             preferredValid = (IPAddress.TryParse(fullPrefDnsText, out var dns1)) && fullPrefDnsText != fullAltDnsText && fullPrefDnsText != fullIpText && invalidEntries.Contains(fullPrefDnsText) != true ? true : false;
             alternateValid = (IPAddress.TryParse(fullAltDnsText, out var dns2) || fullAltDnsText.Length == 3) && fullPrefDnsText != fullAltDnsText && fullAltDnsText != fullIpText && invalidEntries.Contains(fullAltDnsText) != true ? true : false;
@@ -371,10 +366,10 @@ namespace SyncboxWizard
             lblIpError.Visible = ((fullIpText.Equals(fullSubnetText) || fullIpText.Equals(fullGatewayText) || fullIpText.Equals(fullPrefDnsText) || fullIpText.Equals(fullAltDnsText)) && fullIpText.Length != 3) ? true : false;
             lblSubnetError.Visible = ((fullSubnetText.Equals(fullIpText) || fullSubnetText.Equals(fullGatewayText)) && fullSubnetText.Length != 3) ? true : false;
             lblPreferredError.Visible = (fullPrefDnsText.Equals(fullAltDnsText) && fullPrefDnsText.Length != 3) ? true : false;
+            lblValidSubnetError.Visible = subnetValid == false ? true : false;
 
             // Changes the texbox content color based on tha validated triggers
             ChangeColor(new MaskedTextBox[] { ipMi1, ipMi2, ipMi3, ipMi4 }, ipValid);
-            ChangeColor(new MaskedTextBox[] { subnetMi1, subnetMi2, subnetMi3, subnetMi4 }, subnetValid);
             ChangeColor(new MaskedTextBox[] { gatewayMi1, gatewayMi2, gatewayMi3, gatewayMi4 }, gatewayValid);
             ChangeColor(new MaskedTextBox[] { prefDnsMi1, prefDnsMi2, prefDnsMi3, prefDnsMi4 }, preferredValid);
             ChangeColor(new MaskedTextBox[] { altDnsMi1, altDnsMi2, altDnsMi3, altDnsMi4 }, alternateValid);

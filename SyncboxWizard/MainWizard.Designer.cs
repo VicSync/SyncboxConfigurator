@@ -91,6 +91,7 @@
             this.lblCompleteParagraph = new System.Windows.Forms.Label();
             this.lblHangingCompleteHeader = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblValidSubnetError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.Introduction.SuspendLayout();
             this.NetworkPreconfiguration.SuspendLayout();
@@ -211,6 +212,7 @@
             // 
             // NetworkDetails
             // 
+            this.NetworkDetails.Controls.Add(this.lblValidSubnetError);
             this.NetworkDetails.Controls.Add(this.lblNetworkError);
             this.NetworkDetails.Controls.Add(this.lblSubnetError);
             this.NetworkDetails.Controls.Add(this.lblEntryError);
@@ -266,7 +268,7 @@
             // lblNetworkError
             // 
             this.lblNetworkError.AutoSize = true;
-            this.lblNetworkError.Location = new System.Drawing.Point(50, 254);
+            this.lblNetworkError.Location = new System.Drawing.Point(50, 260);
             this.lblNetworkError.Name = "lblNetworkError";
             this.lblNetworkError.Size = new System.Drawing.Size(0, 15);
             this.lblNetworkError.TabIndex = 55;
@@ -275,7 +277,7 @@
             // 
             this.lblSubnetError.AutoSize = true;
             this.lblSubnetError.ForeColor = System.Drawing.Color.Red;
-            this.lblSubnetError.Location = new System.Drawing.Point(50, 294);
+            this.lblSubnetError.Location = new System.Drawing.Point(50, 300);
             this.lblSubnetError.Name = "lblSubnetError";
             this.lblSubnetError.Size = new System.Drawing.Size(325, 15);
             this.lblSubnetError.TabIndex = 54;
@@ -295,7 +297,7 @@
             // 
             this.lblPreferredError.AutoSize = true;
             this.lblPreferredError.ForeColor = System.Drawing.Color.Red;
-            this.lblPreferredError.Location = new System.Drawing.Point(50, 319);
+            this.lblPreferredError.Location = new System.Drawing.Point(50, 325);
             this.lblPreferredError.Name = "lblPreferredError";
             this.lblPreferredError.Size = new System.Drawing.Size(247, 15);
             this.lblPreferredError.TabIndex = 52;
@@ -305,7 +307,7 @@
             // 
             this.lblIpError.AutoSize = true;
             this.lblIpError.ForeColor = System.Drawing.Color.Red;
-            this.lblIpError.Location = new System.Drawing.Point(50, 269);
+            this.lblIpError.Location = new System.Drawing.Point(50, 275);
             this.lblIpError.Name = "lblIpError";
             this.lblIpError.Size = new System.Drawing.Size(485, 15);
             this.lblIpError.TabIndex = 51;
@@ -636,7 +638,6 @@
             this.subnetMi4.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.subnetMi4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FinalOctetCheck);
-            this.subnetMi4.Leave += new System.EventHandler(this.SubnetMaskCheck);
             // 
             // subnetMi3
             // 
@@ -653,7 +654,6 @@
             this.subnetMi3.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.subnetMi3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
-            this.subnetMi3.Leave += new System.EventHandler(this.SubnetMaskCheck);
             // 
             // subnetMi2
             // 
@@ -670,7 +670,6 @@
             this.subnetMi2.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.subnetMi2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
-            this.subnetMi2.Leave += new System.EventHandler(this.SubnetMaskCheck);
             // 
             // subnetMi1
             // 
@@ -690,7 +689,6 @@
             this.subnetMi1.Enter += new System.EventHandler(this.mi_Enter);
             this.subnetMi1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IgnoreArrowKey);
             this.subnetMi1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.subnetNumberInput);
-            this.subnetMi1.Leave += new System.EventHandler(this.SubnetMaskCheck);
             // 
             // label4
             // 
@@ -880,6 +878,17 @@
             this.lblHangingCompleteHeader.TabIndex = 0;
             this.lblHangingCompleteHeader.Text = "Complete the Configuration";
             // 
+            // lblValidSubnetError
+            // 
+            this.lblValidSubnetError.AutoSize = true;
+            this.lblValidSubnetError.ForeColor = System.Drawing.Color.Red;
+            this.lblValidSubnetError.Location = new System.Drawing.Point(51, 248);
+            this.lblValidSubnetError.Name = "lblValidSubnetError";
+            this.lblValidSubnetError.Size = new System.Drawing.Size(461, 15);
+            this.lblValidSubnetError.TabIndex = 56;
+            this.lblValidSubnetError.Text = "Valid subnet entries are: 0, 128, 192, 224, 240, 248, 252, 254 and 255 (except in" +
+    " last octet)";
+            // 
             // MainWizard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -963,5 +972,6 @@
         private System.Windows.Forms.Label lblSubnetError;
         private System.Windows.Forms.Label lblEntryError;
         private System.Windows.Forms.Label lblPreferredError;
+        private System.Windows.Forms.Label lblValidSubnetError;
     }
 }
