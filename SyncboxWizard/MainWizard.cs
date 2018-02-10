@@ -262,17 +262,7 @@ namespace SyncboxWizard
 
             if (Enum.IsDefined(typeof(numberKeycodes), e.KeyCode.ToString()))
             {
-                if (textBox.Text.Length > 0)
-                {
-                    if (subnetOptions.Contains(int.Parse(textBox.Text)) == false)
-                    {
-                        ChangeColor(new MaskedTextBox[] { textBox }, false);
-                    }
-                    else
-                    {
-                        ChangeColor(new MaskedTextBox[] { textBox }, true);
-                    }
-                }
+
             }
             else
             {
@@ -370,6 +360,7 @@ namespace SyncboxWizard
 
             // Changes the texbox content color based on tha validated triggers
             ChangeColor(new MaskedTextBox[] { ipMi1, ipMi2, ipMi3, ipMi4 }, ipValid);
+            ChangeColor(new MaskedTextBox[] { subnetMi1, subnetMi2, subnetMi3, subnetMi4}, subnetValid);
             ChangeColor(new MaskedTextBox[] { gatewayMi1, gatewayMi2, gatewayMi3, gatewayMi4 }, gatewayValid);
             ChangeColor(new MaskedTextBox[] { prefDnsMi1, prefDnsMi2, prefDnsMi3, prefDnsMi4 }, preferredValid);
             ChangeColor(new MaskedTextBox[] { altDnsMi1, altDnsMi2, altDnsMi3, altDnsMi4 }, alternateValid);
